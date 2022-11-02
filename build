@@ -23,6 +23,7 @@ parser.add_argument("--debug", help="enable debugging", action="store_true", def
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 
+
 def build_package(args, options):
     """Build package.
 
@@ -34,6 +35,7 @@ def build_package(args, options):
                    + ["sdist"]
                    + (options if options else []))
 
+
 def build(args, options=None):
     """Build package.
     
@@ -42,11 +44,12 @@ def build(args, options=None):
     """
     if options is None:
         options = []
-  
+
     if os.path.exists("dist"):
         shutil.rmtree("dist")
-      
+
     build_package(args, options)
+
 
 if __name__ == "__main__":
     args = parser.parse_args()
